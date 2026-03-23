@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 # ---
-FROM golang:1.22 AS build
+FROM golang:1.26.1 AS build
 
 ENV GOOS=linux
 ENV GOARCH=amd64
@@ -11,6 +11,8 @@ COPY . /work
 
 # Build admission-webhook
 RUN --mount=type=cache,target=/root/.cache/go-build,sharing=private \
+  go mod download && \
+  go mod tidy && \
   go build -o bin/admission-webhook .
 
 # ---

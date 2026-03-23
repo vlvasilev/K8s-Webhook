@@ -1,3 +1,7 @@
+REGISTRY=hisshadow85
+IMAGE_NAME=simple-kubernetes-webhook
+IMAGE_TAG=latest
+
 .PHONY: test
 test:
 	@echo "\n🛠️  Running unit tests..."
@@ -12,7 +16,7 @@ build:
 .PHONY: docker-build
 docker-build:
 	@echo "\n📦 Building simple-kubernetes-webhook Docker image..."
-	docker build -t simple-kubernetes-webhook:latest .
+	docker build -t "$(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)" .
 
 # From this point `kind` is required
 .PHONY: cluster
@@ -28,7 +32,7 @@ delete-cluster:
 .PHONY: push
 push: docker-build
 	@echo "\n📦 Pushing admission-webhook image into Kind's Docker daemon..."
-	kind load docker-image simple-kubernetes-webhook:latest
+	kind load docker-image "$(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)"
 
 .PHONY: deploy-config
 deploy-config:
@@ -41,7 +45,7 @@ delete-config:
 	kubectl delete -f dev/manifests/cluster-config/
 
 .PHONY: deploy
-deploy: push delete deploy-config
+deploy: delete deploy-config
 	@echo "\n🚀 Deploying simple-kubernetes-webhook..."
 	kubectl apply -f dev/manifests/webhook/
 

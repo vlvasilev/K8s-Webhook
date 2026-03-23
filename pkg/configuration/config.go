@@ -1,12 +1,13 @@
 package configuration
 
 import (
-	"boolptr"
 	"fmt"
 	"os"
 
-	"github.com/slackhq/simple-kubernetes-webhook/pkg/mutation"
+	"github.com/vmware-tanzu/velero/pkg/util/boolptr"
 	"gopkg.in/yaml.v2"
+
+	"github.com/slackhq/simple-kubernetes-webhook/pkg/mutation"
 )
 
 type Configuration struct {

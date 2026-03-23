@@ -11,10 +11,10 @@ data:
         annotations: {}
         labels: {}
         containerreplacements:
-          sapcc-operator: columbus.common.repositories.cloud.sap/com.sap.edgelm/sapcc-operator:0.59.0-test.i330716-latest
+          sapcc-operator: columbus.common.repositories.cloud.sap/com.sap.edgelm/sapcc-operator:0.59.0-test-latest
       - name: cleanup-cluster-*
         enabled: false
         annotations: {}
         labels: {}
         containerreplacements:
-          cleanup: columbus.common.repositories.cloud.sap/com.sap.edgelm/docker-cleanup-cluster:0.35.0-test.i330716-latest
+          cleanup: columbus.common.repositories.cloud.sap/com.sap.edgelm/docker-cleanup-cluster:0.35.0-test-latest
