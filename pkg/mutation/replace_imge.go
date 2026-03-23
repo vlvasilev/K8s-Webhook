@@ -44,5 +44,11 @@ func (se replaceImage) replaceImage(pod *corev1.Pod, containerImage map[string]s
 				pod.Spec.Containers[i].Image = image
 			}
 		}
+		for i, initContainer := range pod.Spec.InitContainers {
+			if initContainer.Name == containerName {
+				se.Logger.Debugf("pod image injected %s", image)
+				pod.Spec.InitContainers[i].Image = image
+			}
+		}
 	}
 }

@@ -22,14 +22,14 @@ var DefaultConfig = Configuration{
 		Pods: []mutation.Pod{
 			{
 				Name:    &sapccOperator,
-				Enabled: boolptr.True(),
+				Enabled: boolptr.False(),
 				ContainerReplacements: map[string]string{
 					"sapcc-operator": "columbus.common.repositories.cloud.sap/com.sap.edgelm/sapcc-operator:latest",
 				},
 			},
 			{
 				Name:    &cleanupCluster,
-				Enabled: boolptr.True(),
+				Enabled: boolptr.False(),
 				ContainerReplacements: map[string]string{
 					"cleanup": "columbus.common.repositories.cloud.sap/com.sap.edgelm/docker-cleanup-cluster:latest",
 				},
