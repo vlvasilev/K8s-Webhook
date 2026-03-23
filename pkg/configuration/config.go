@@ -24,14 +24,14 @@ var DefaultConfig = Configuration{
 				Name:    &sapccOperator,
 				Enabled: boolptr.True(),
 				ContainerReplacements: map[string]string{
-					"sapcc-operator": "columbus.common.repositories.cloud.sap/com.sap.edgelm/sapcc-operator:0.59.0-test.i330716-latest",
+					"sapcc-operator": "columbus.common.repositories.cloud.sap/com.sap.edgelm/sapcc-operator:latest",
 				},
 			},
 			{
 				Name:    &cleanupCluster,
 				Enabled: boolptr.True(),
 				ContainerReplacements: map[string]string{
-					"cleanup": "columbus.common.repositories.cloud.sap/com.sap.edgelm/docker-cleanup-cluster:0.35.0-test.i330716-latest",
+					"cleanup": "columbus.common.repositories.cloud.sap/com.sap.edgelm/docker-cleanup-cluster:latest",
 				},
 			},
 		},
