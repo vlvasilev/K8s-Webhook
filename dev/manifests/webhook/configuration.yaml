@@ -25,7 +25,7 @@ data:
       - name: edge-monitoring-service-pr-operator-*
         enabled: true
         containerreplacements:
-          prometheus-operator: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus-operator:0.45.0-test.i330716-latest
+          prometheus-operator: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus-operator:0.45.0-test-latest
       - name: edge-monitoring-service-prometheus-node-exporter-*
         enabled: true
         containerreplacements:
@@ -33,6 +33,7 @@ data:
       - name: prometheus-edge-monitoring-service-pr-prometheus-0
         enabled: true
         containerreplacements:
-          prometheus: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus:2.54.14-test.i330716-latest
-          config-reloader: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus-config-reloader:0.45.0-test.i330716-latest
+          prometheus: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus:2.54.14-test-latest
+          config-reloader: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus-config-reloader:0.45.0-test-latest
           thanos-sidecar: columbus.common.repositories.cloud.sap/com.sap.edgelm/thanos:latest
+          init-config-reloader: columbus.common.repositories.cloud.sap/com.sap.edgelm/prometheus-config-reloader:0.45.0-test-latest
